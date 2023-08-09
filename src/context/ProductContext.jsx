@@ -1,16 +1,23 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useReducer } from "react";
 
 const ContextInstance = createContext();
 
 const ProductContext = ({ children }) => {
-  const [color, setColor] = useState("blue");
+    
+  const reducer = (action, state) => {};
+
+  const [state, dispatch] = useReducer(reducer, {
+    color: "blue",
+  });
+
   return (
-    <ContextInstance.Provider value={{ color }}>
+    <ContextInstance.Provider value={{ ...state }}>
       {children}
     </ContextInstance.Provider>
   );
 };
 
+// Custom Hook
 const useProductContext = () => {
   return useContext(ContextInstance);
 };

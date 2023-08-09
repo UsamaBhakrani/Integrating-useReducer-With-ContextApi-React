@@ -1,9 +1,8 @@
-
+import { useProductContext } from "./context/ProductContext";
 
 const App = () => {
-  return (
-    <div>App</div>
-  )
-}
+  const { color } = useProductContext();
+  return <div>{color}</div>;
+};
 
-export default App
+export default App;
