@@ -12,7 +12,7 @@ const product_reducer = (state, action) => {
     return { ...state, color: "Black" };
   }
   if (action.type === CHANGE_COLOR_TO_GREEN) {
-    return { ...state, color: "Green" };
+    return { ...state, color: "Green", size: "large" };
   }
   throw Error("Does not Match any Color");
 };

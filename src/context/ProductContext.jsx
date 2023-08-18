@@ -11,7 +11,10 @@ const ContextInstance = createContext();
 const ProductContext = ({ children }) => {
   const [state, dispatch] = useReducer(product_reducer, {
     color: "Blue",
+    size: "small",
   });
+
+  console.log(state) ;
 
   const changeColorToGray = () => {
     dispatch({ type: CHANGE_COLOR_TO_GRAY });
